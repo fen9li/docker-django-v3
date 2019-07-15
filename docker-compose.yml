@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:10.3
+    restart: on-failure
+    volumes:
+      - koala:/var/lib/mysql
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    environment:
+      MYSQL_DATABASE: koala
+      MYSQL_USER: koalauser
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - backend
+  web:
+    build: .
+    restart: on-failure
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+    depends_on:
+      - db
+    
+volumes:
+  koala:
+networks:
+  backend:
