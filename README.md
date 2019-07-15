@@ -5,9 +5,9 @@
 * https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 * https://github.com/mdn/django-locallibrary-tutorial
 
-> From koala v2
-> https://docs.docker.com/compose/django/
-> https://blog.devartis.com/django-development-with-docker-a-completed-development-cycle-7322ad8ba508
+> From koala v2    
+> https://docs.docker.com/compose/django/    
+> https://blog.devartis.com/django-development-with-docker-a-completed-development-cycle-7322ad8ba508    
 
 ## start the project locallibrary and app catalog
 
